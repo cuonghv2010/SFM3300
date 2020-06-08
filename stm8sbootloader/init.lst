@@ -1,0 +1,121 @@
+                                      1 .module INIT
+                                      2 .macro jump addr
+                                      3     jp 0x8280 + addr
+                                      4     .ds 1
+                                      5 .endm
+                                      6 
+                                      7 .area IVT
+      000000 82v00u00u00              8 int init ; reset
+      000004                          9 jump 0x4 ; trap
+      000004 CC 82 84         [ 2]    1     jp 0x8280 + 0x4
+      000007                          2     .ds 1
+      000008                         10 jump 0x8 ; int0
+      000008 CC 82 88         [ 2]    1     jp 0x8280 + 0x8
+      00000B                          2     .ds 1
+      00000C                         11 jump 0xc ; int1
+      00000C CC 82 8C         [ 2]    1     jp 0x8280 + 0xc
+      00000F                          2     .ds 1
+      000010                         12 jump 0x10 ; int2
+      000010 CC 82 90         [ 2]    1     jp 0x8280 + 0x10
+      000013                          2     .ds 1
+      000014                         13 jump 0x14 ; int3
+      000014 CC 82 94         [ 2]    1     jp 0x8280 + 0x14
+      000017                          2     .ds 1
+      000018                         14 jump 0x18 ; int4
+      000018 CC 82 98         [ 2]    1     jp 0x8280 + 0x18
+      00001B                          2     .ds 1
+      00001C                         15 jump 0x1c ; int5
+      00001C CC 82 9C         [ 2]    1     jp 0x8280 + 0x1c
+      00001F                          2     .ds 1
+      000020                         16 jump 0x20 ; int6
+      000020 CC 82 A0         [ 2]    1     jp 0x8280 + 0x20
+      000023                          2     .ds 1
+      000024                         17 jump 0x24 ; int7
+      000024 CC 82 A4         [ 2]    1     jp 0x8280 + 0x24
+      000027                          2     .ds 1
+      000028                         18 jump 0x28 ; int8
+      000028 CC 82 A8         [ 2]    1     jp 0x8280 + 0x28
+      00002B                          2     .ds 1
+      00002C                         19 jump 0x2c ; int9
+      00002C CC 82 AC         [ 2]    1     jp 0x8280 + 0x2c
+      00002F                          2     .ds 1
+      000030                         20 jump 0x30 ; int10
+      000030 CC 82 B0         [ 2]    1     jp 0x8280 + 0x30
+      000033                          2     .ds 1
+      000034                         21 jump 0x34 ; int11
+      000034 CC 82 B4         [ 2]    1     jp 0x8280 + 0x34
+      000037                          2     .ds 1
+      000038                         22 jump 0x38 ; int12
+      000038 CC 82 B8         [ 2]    1     jp 0x8280 + 0x38
+      00003B                          2     .ds 1
+      00003C                         23 jump 0x3c ; int13
+      00003C CC 82 BC         [ 2]    1     jp 0x8280 + 0x3c
+      00003F                          2     .ds 1
+      000040                         24 jump 0x40 ; int14
+      000040 CC 82 C0         [ 2]    1     jp 0x8280 + 0x40
+      000043                          2     .ds 1
+      000044                         25 jump 0x44 ; int15
+      000044 CC 82 C4         [ 2]    1     jp 0x8280 + 0x44
+      000047                          2     .ds 1
+      000048                         26 jump 0x48 ; int16
+      000048 CC 82 C8         [ 2]    1     jp 0x8280 + 0x48
+      00004B                          2     .ds 1
+      00004C                         27 jump 0x4c ; int17
+      00004C CC 82 CC         [ 2]    1     jp 0x8280 + 0x4c
+      00004F                          2     .ds 1
+      000050                         28 jump 0x50 ; int18
+      000050 CC 82 D0         [ 2]    1     jp 0x8280 + 0x50
+      000053                          2     .ds 1
+      000054                         29 jump 0x54 ; int19
+      000054 CC 82 D4         [ 2]    1     jp 0x8280 + 0x54
+      000057                          2     .ds 1
+      000058                         30 jump 0x58 ; int20
+      000058 CC 82 D8         [ 2]    1     jp 0x8280 + 0x58
+      00005B                          2     .ds 1
+      00005C                         31 jump 0x5c ; int21
+      00005C CC 82 DC         [ 2]    1     jp 0x8280 + 0x5c
+      00005F                          2     .ds 1
+      000060                         32 jump 0x60 ; int22
+      000060 CC 82 E0         [ 2]    1     jp 0x8280 + 0x60
+      000063                          2     .ds 1
+      000064                         33 jump 0x64 ; int23
+      000064 CC 82 E4         [ 2]    1     jp 0x8280 + 0x64
+      000067                          2     .ds 1
+      000068                         34 jump 0x68 ; int24
+      000068 CC 82 E8         [ 2]    1     jp 0x8280 + 0x68
+      00006B                          2     .ds 1
+      00006C                         35 jump 0x6c ; int25
+      00006C CC 82 EC         [ 2]    1     jp 0x8280 + 0x6c
+      00006F                          2     .ds 1
+      000070                         36 jump 0x70 ; int26
+      000070 CC 82 F0         [ 2]    1     jp 0x8280 + 0x70
+      000073                          2     .ds 1
+      000074                         37 jump 0x74 ; int27
+      000074 CC 82 F4         [ 2]    1     jp 0x8280 + 0x74
+      000077                          2     .ds 1
+      000078                         38 jump 0x78 ; int28
+      000078 CC 82 F8         [ 2]    1     jp 0x8280 + 0x78
+      00007B                          2     .ds 1
+      00007C                         39 jump 0x7c ; int29
+      00007C CC 82 FC         [ 2]    1     jp 0x8280 + 0x7c
+      00007F                          2     .ds 1
+                                     40 
+                                     41 .area SSEG
+                                     42 .area GSINIT
+      000000                         43 init:
+      000000 AEr00r00         [ 2]   44     ldw x, #l_DATA
+      000003 27 07            [ 1]   45     jreq    00002$
+      000005                         46 00001$:
+      000005 72 4FuFFuFF      [ 1]   47     clr (s_DATA - 1, x)
+      000009 5A               [ 2]   48     decw x
+      00000A 26 F9            [ 1]   49     jrne    00001$
+      00000C                         50 00002$:
+      00000C AEr00r00         [ 2]   51     ldw x, #l_INITIALIZER
+      00000F 27 09            [ 1]   52     jreq    00004$
+      000011                         53 00003$:
+      000011 D6uFFuFF         [ 1]   54     ld  a, (s_INITIALIZER - 1, x)
+      000014 D7uFFuFF         [ 1]   55     ld  (s_INITIALIZED - 1, x), a
+      000017 5A               [ 2]   56     decw    x
+      000018 26 F7            [ 1]   57     jrne    00003$
+      00001A                         58 00004$:
+      00001A CCr00r00         [ 2]   59     jp  _bootloader_main

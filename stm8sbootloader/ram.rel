@@ -1,0 +1,32 @@
+XH3
+H C areas 2 global symbols
+M ram
+O -mstm8
+S .__.ABS. Def000000
+A _CODE size 0 flags 0 addr 0
+A DATA size 0 flags 0 addr 0
+A INITIALIZED size 0 flags 0 addr 0
+A DABS size 0 flags 8 addr 0
+A HOME size 0 flags 0 addr 0
+A GSINIT size 0 flags 0 addr 0
+A GSFINAL size 0 flags 0 addr 0
+A CONST size 0 flags 0 addr 0
+A INITIALIZER size 0 flags 0 addr 0
+A CODE size 0 flags 0 addr 0
+A RAM_SEG size 29 flags 0 addr 0
+S _ram_flash_write_block Def000000
+A CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 0A
+T 00 00 00 35 01 50 5B 35 FE 50 5C 4F
+R 00 00 00 0A
+T 00 00 09
+R 00 00 00 0A
+T 00 00 09 A1 40 24 14 5F 97 72 FB 03 51 5F 97 72
+R 00 00 00 0A
+T 00 00 16 FB 05 88 F6 97 90 F7 84 4C 20 E8
+R 00 00 00 0A
+T 00 00 21
+R 00 00 00 0A
+T 00 00 21 C6 50 5F A5 04 27 F9 81
+R 00 00 00 0A
