@@ -36,7 +36,6 @@ inline void iwdg_refresh() {
     IWDG_KR = IWDG_KEY_REFRESH;
 }
 
-
 /**
  * Initialize UART1 in 8N1 mode
  */
@@ -48,6 +47,9 @@ inline void uart_init() {
     UART_BRR1 = UART_DIV >> 4;
     /* enable transmitter and receiver */
     UART_CR2 = (1 << UART_CR2_TEN) | (1 << UART_CR2_REN);
+    RS485dir_CR1 = 1 << RS485dir_PIN;       //push-pull out mode
+    RS485dir_DDR = 1 << RS485dir_PIN;       //direction set to out
+
 }
 
 /**
@@ -68,6 +70,7 @@ for (ix=0;ix<10;ix++); //delay for before transmit
  */
 static uint8_t uart_read() {
     iwdg_refresh();
+	RS485dir_ODR = 0;					//RS485 RX mode, low
     while (!(UART_SR & (1 << UART_SR_RXNE)));
     return UART_DR;
 }
@@ -206,9 +209,6 @@ void bootloader_main() {
         ram_cpy();
         iwdg_init();
         uart_init();
-    	RS485dir_CR1 = 1 << RS485dir_PIN;	//push-pull out mode
- 	RS485dir_DDR = 1 << RS485dir_PIN;	//direction set to out
-	RS485dir_ODR = 0;			//RS485 RX mode, low	
         bootloader_exec();
     } else {
         /* jump to application */
